@@ -7,16 +7,14 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.util.Range;
 
 public class Hardware {
-
     //define all 4 movement motors
     public DcMotorEx frontLeftWheel;
     public DcMotorEx frontRightWheel;
     public DcMotorEx backLeftWheel;
     public DcMotorEx backRightWheel;
-
-
+    public DcMotorEx gate;
+    public DcMotorEx shooter;
     public DcMotorEx intake;
-    public DcMotorEx outtake;
 
     public double maxSpeed = 1.0;
 
@@ -25,10 +23,24 @@ public class Hardware {
     public void initialization(HardwareMap robot) {
         this.hardwareMap = robot;
 
-        frontLeftWheel  = wheelInstantiationHelper("N/A", false);
-        frontRightWheel = wheelInstantiationHelper("N/A", false);
-        backLeftWheel   = wheelInstantiationHelper("N/A", false);
-        backRightWheel  = wheelInstantiationHelper("N/A", false);
+        frontLeftWheel  = wheelInstantiationHelper("em1", true);
+        frontRightWheel = wheelInstantiationHelper("cm2", true);
+        backLeftWheel   = wheelInstantiationHelper("em0", true);
+        backRightWheel  = wheelInstantiationHelper("cm3", false);
+        intake = wheelInstantiationHelper("em2", true);
+        gate = wheelInstantiationHelper("cm1", false);
+        shooter = wheelInstantiationHelper("cm0", true);
+
+
+
+
+        shooter.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        shooter.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+
+        gate.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        gate.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
 
     }
 
