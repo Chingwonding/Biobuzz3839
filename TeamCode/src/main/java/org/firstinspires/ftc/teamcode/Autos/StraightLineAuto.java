@@ -1,11 +1,13 @@
 package org.firstinspires.ftc.teamcode.Autos;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 import org.firstinspires.ftc.teamcode.configuration.Hardware;
 
+@Disabled
 @Autonomous(name = "meet1 AUTO placeholder")
 public class StraightLineAuto extends LinearOpMode {
 
@@ -107,7 +109,7 @@ public class StraightLineAuto extends LinearOpMode {
 
         robot.gate.setVelocity(430);
         robot.intake.setVelocity(430);
-        sleep((long) (durationSeconds * 1000)); // Feeding time
+        sleep((long) (durationSeconds * 1000));
 
         robot.shooter.setVelocity(0);
         robot.gate.setVelocity(0);
