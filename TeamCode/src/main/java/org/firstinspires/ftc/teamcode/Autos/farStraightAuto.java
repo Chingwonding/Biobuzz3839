@@ -33,7 +33,7 @@ public class farStraightAuto extends LinearOpMode {
             return;
         }
         driveStraight(0.70, 84, 0);
-        turning(1000, 0.50);
+        turning(700, 0.50);
         driveStraight(0.70, 23, 90);
     }
     public void driveStraight(double speed, double distance, double heading) {

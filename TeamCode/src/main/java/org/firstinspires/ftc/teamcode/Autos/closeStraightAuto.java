@@ -33,7 +33,7 @@ public class closeStraightAuto extends LinearOpMode {
             return;
         }
         driveStraight(0.70, 20, 0);
-        turning(-1000, 0.50);
+        turning(-700, 0.50);
         driveStraight(0.70, 48, 0);
     }
     public void driveStraight(double speed, double distance, double heading) {

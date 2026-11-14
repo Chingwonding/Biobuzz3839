@@ -33,7 +33,7 @@ public class controlMethods {
         }
 
         if (isIntaking) {
-            intake.startIntake(0.99);
+            intake.startIntake(430);
         } else {
             intake.stop();
         }
@@ -51,7 +51,7 @@ public class controlMethods {
         }
 
         if (isGateReversing) {
-            robot.gate.setPower(1);
+            robot.gate.setPower(-1);
         } else if (!isGating) {
             robot.gate.setVelocity(0);
         }

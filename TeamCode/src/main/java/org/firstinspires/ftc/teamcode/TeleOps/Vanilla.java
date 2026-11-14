@@ -26,14 +26,24 @@ public class Vanilla extends LinearOpMode {
         waitForStart();
 
         while (opModeIsActive()) {
+            //remember
+            /*
+            gamepad1.x = physical square button
+            a = cross
+            b = circle
+            y = triangle
+             */
+
             // 1. Drive Controls
             controls.drive(-gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x, gamepad1.right_trigger);
 
+
             // 2. Button Toggle Controls
+            boolean shootTriggerPressed = gamepad1.right_trigger > 0.2f;
             if (gamepad1.right_trigger > 0.2 && !lastXState) {
                 controls.isShooting = !controls.isShooting;
             }
-            lastXState = gamepad1.right_trigger_pressed;
+            lastXState = shootTriggerPressed;
 
             if (gamepad1.right_bumper && !lastAState) {
                 controls.isIntaking = !controls.isIntaking;
