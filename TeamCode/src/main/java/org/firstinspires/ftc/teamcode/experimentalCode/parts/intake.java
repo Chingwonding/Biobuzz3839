@@ -3,7 +3,7 @@ import org.firstinspires.ftc.teamcode.configuration.Hardware;
 
 public class intake {
     private Hardware hardware;
-    private double defaultPower = 1.0;
+    private double defaultVelocity = 430;
 
     public intake() {}
 
@@ -15,54 +15,36 @@ public class intake {
 
     // --- Speed Adjustment Methods ---
 
-    public void setDefaultPower(double power) {
-        this.defaultPower = power;
+    public void setDefaultPower(double velocity) {
+        this.defaultVelocity = velocity;
     }
 
     public double getDefaultPower() {
-        return defaultPower;
+        return defaultVelocity;
     }
 
     // --- Intake Actions ---
-
-    /**
-     * Starts intaking at default power.
-     */
     public void startIntake() {
-        startIntake(defaultPower);
+        startIntake(defaultVelocity);
     }
-
-    /**
-     * Starts intaking at specified power.
-     */
-    public void startIntake(double power) {
+    public void startIntake(double velocity) {
         if (hardware != null && hardware.intake != null) {
-            hardware.intake.setPower(power);
+            hardware.intake.setVelocity(velocity);
         }
     }
 
-    /**
-     * Reverses the intake (outtake) at default power.
-     */
     public void reverseIntake() {
-        reverseIntake(defaultPower);
+        reverseIntake(defaultVelocity);
     }
 
-    /**
-     * Reverses the intake at specified power.
-     */
-    public void reverseIntake(double power) {
+    public void reverseIntake(double velocity) {
         if (hardware != null && hardware.intake != null) {
-            hardware.intake.setPower(-power);
+            hardware.intake.setVelocity(-velocity);
         }
     }
-
-    /**
-     * Stops the intake motor.
-     */
     public void stop() {
         if (hardware != null && hardware.intake != null) {
-            hardware.intake.setPower(0);
+            hardware.intake.setVelocity(0);
         }
     }
 }

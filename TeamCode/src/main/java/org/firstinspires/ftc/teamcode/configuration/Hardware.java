@@ -34,12 +34,15 @@ public class Hardware {
 
 
 
-        shooter.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        shooter.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        shooter.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
+        shooter.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
 
 
-        gate.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        gate.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        gate.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
+        gate.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
+
+        intake.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
+        intake.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
 
 
     }

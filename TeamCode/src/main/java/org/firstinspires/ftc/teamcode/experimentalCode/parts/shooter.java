@@ -5,19 +5,13 @@ import org.firstinspires.ftc.teamcode.configuration.Hardware;
 public class shooter {
     private Hardware hardware;
     private double defaultPower = 1.0;
-    private double defaultVelocity = 2000.0; // ticks per second
+    private double defaultVelocity = 2000.0;
 
     public shooter() {}
 
     public shooter(Hardware hardware) {
         this.hardware = hardware;
     }
-
-    public void initialize(Hardware hardware) {
-        this.hardware = hardware;
-    }
-
-    // --- Speed Adjustment Methods ---
 
     public void setDefaultPower(double power) {
         this.defaultPower = power;
@@ -37,25 +31,17 @@ public class shooter {
 
     // --- Shooter Actions ---
 
-    /**
-     * Preps shooter motor at the default power level.
-     */
+
     public void prepShooters() {
         prepShooters(defaultPower);
     }
 
-    /**
-     * Preps shooter motor at a specified power level.
-     */
     public void prepShooters(double power) {
         if (hardware != null && hardware.shooter != null) {
             hardware.shooter.setPower(power);
         }
     }
 
-    /**
-     * Sets shooter motor velocity using the default velocity setting.
-     */
     public void setVelocity() {
         setVelocity(defaultVelocity);
     }
@@ -66,15 +52,6 @@ public class shooter {
     public void setVelocity(double velocity) {
         if (hardware != null && hardware.shooter != null) {
             hardware.shooter.setVelocity(velocity);
-        }
-    }
-
-    /**
-     * Operates the gate motor to feed elements into the shooter.
-     */
-    public void setGatePower(double power) {
-        if (hardware != null && hardware.gate != null) {
-            hardware.gate.setPower(power);
         }
     }
 
